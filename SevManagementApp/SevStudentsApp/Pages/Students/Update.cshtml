@@ -1,0 +1,43 @@
+﻿@page
+@model SevStudentsApp.Pages.Students.UpdateModel
+@{
+    ViewData["Title"] = "Student Update";
+}
+
+<h2>New Student</h2>
+@if (!Model.errorMessage.Equals(""))
+{
+        <h2><strong>@Model.errorMessage</strong></h2>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <input type="hidden" class="form-control" name="id"  
+                   value="@Model.studentDto.Id" />
+
+    </div>
+    <div class="row mb-3">
+        <label for="firstname" class="col-md-1 col-form-label">Όνομα</label>
+        <div>
+            <input type="text" class="form-control"
+                   name="firstname" id="firstname" placeholder="Enter firstname"
+                   value="@Model.studentDto.Firstname" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="lastname" class="col-md-1 col-form-label">Επώνυμο</label>
+        <div>
+            <input type="text" class="form-control"
+                   name="lastname" id="lastname" placeholder="Enter lastname"
+                   value="@Model.studentDto.Lastname" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="offset-md-1 col-md-3 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="offset-md-1 col-md-3 d-grid">
+            <a href="/" role="button" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,16 @@
+﻿using SevCoursesApp.DTO;
+using SevCoursesApp.Models;
+
+namespace SevCoursesApp.Service
+{
+    public interface ICourseService
+    {
+        List<Course> GetAllCourses();
+        void InsertCourse(CourseDTO? dto);
+        void UpdateCourse(CourseDTO? dto);
+        Course? DeleteCourse(CourseDTO? dto);
+        Course? GetCourse(int id);
+
+
+    }
+}

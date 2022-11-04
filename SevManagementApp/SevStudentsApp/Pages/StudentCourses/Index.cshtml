@@ -1,0 +1,43 @@
+﻿@page
+@model SevStudentCoursesApp.Pages.StudentCourses.IndexModel
+@{
+    ViewData["Title"] = "Student Course Index";
+
+}
+
+<h2>List of Student Courses</h2>
+<a class="btn btn-primary btn-sm" href="/StudentCourses/Create">New Student Course</a>
+<div style="background:#611ff0">
+<table class="table table-bordered table-hover text-white">
+ 
+    <thead>
+        <tr>
+            <th>Student ID</th>
+            <th>Course ID</th>
+        </tr>
+        </thead>
+        <tbody>
+            @if (Model.studentcourses is not null) 
+            {
+                @foreach (var studentcourse in Model.studentcourses)
+                {
+                    <tr>
+                        <td>@studentcourse.StudentId</td>
+                        <td>@studentcourse.CourseId</td>
+                        <td>
+                                              <a class="btn btn-outline-light btn-sm" 
+                                    href="/StudentCourses/Update?student_id=@studentcourse.StudentId">Update</a>
+                                             <a class="btn btn-outline-light btn-sm" 
+                                    href="/StudentCourses/Delete?student_id=@studentcourse.StudentId">Delete</a>
+                        </td>
+                    </tr>
+                }
+            }
+
+        </tbody>
+
+
+
+
+    </table>
+    </div>

@@ -1,0 +1,11 @@
+﻿@page
+@model SevStudentsApp.Pages.Students.DeleteModel
+@{
+    ViewData["Title"] = "Student Delete";
+
+}
+
+@if (!Model.errorMessage.Equals(""))
+{
+        <h2><strong>@Model.errorMessage</strong></h2>
+}

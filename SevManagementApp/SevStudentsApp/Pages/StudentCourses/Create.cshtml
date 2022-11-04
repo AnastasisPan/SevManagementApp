@@ -1,0 +1,39 @@
+﻿@page
+@model SevStudentCoursesApp.Pages.StudentCourses.CreateModel
+@{
+    ViewData["Title"] = "Student Course Create";
+
+}
+
+<h2>New Student Course</h2>
+@if (!Model.errorMessage.Equals(""))
+{
+        <h2><strong>@Model.errorMessage</strong></h2>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label for="student_id" class="col-md-1 col-form-label">Student ID</label>
+        <div>
+            <input type="number" class="form-control"
+                   name="student_id" id="student_id" placeholder="Enter student id"
+                   value="@Model.studentcourseDto.StudentId" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="course_id" class="col-md-1 col-form-label">Course ID</label>
+        <div>
+            <input type="number" class="form-control"
+                   name="course_id" id="course_id" placeholder="Enter course_id" 
+                   value="@Model.studentcourseDto.CourseId" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-1 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-md-1 d-grid">
+           <a href="/" role="button" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+</form>

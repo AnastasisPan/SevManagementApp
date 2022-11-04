@@ -1,0 +1,38 @@
+﻿@page
+@model SevCoursesApp.Pages.Courses.CreateModel
+@{
+    ViewData["Title"] = "Course Create";
+}
+
+<h2>New Course</h2>
+@if (!Model.errorMessage.Equals(""))
+{
+        <h2><strong>@Model.errorMessage</strong></h2>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label for="description" class="col-md-1 col-form-label">Description</label>
+        <div>
+            <input type="text" class="form-control"
+                   name="description" id="description" placeholder="Enter your course description"
+                   value="@Model.courseDto.Description" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <label for="teacherid" class="col-md-1 col-form-label">Teacher ID</label>
+        <div>
+            <input type="number" class="form-control"
+                   name="teacherid" id="teacherid" placeholder="Enter your Teacher Id" 
+                   value="@Model.courseDto.TeacherId" />
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-md-1 d-grid">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+        <div class="col-md-1 d-grid">
+           <a href="/" role="button" class="btn btn-primary">Cancel</a>
+        </div>
+    </div>
+</form>
